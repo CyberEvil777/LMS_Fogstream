@@ -17,15 +17,29 @@
 ![CSS3](https://img.shields.io/badge/-CSS3-%231572B6?style=flat-square&logo=css3)
 
 # LMS_Fogstream
- Как развернуть Backend
- ```
-...\> cd Backend
-...\Backend\> python -m venv venv
-...\Backend\> cd venv/Scripts
-...\Backend\> activate
-...\Backend\> cd ..
-...\Backend\> cd ..
-...\Backend\>  pip install -r requirements.txt
-...\Backend\> cd LMS_Fogstream
-...\Backend\> python .\manage.py runserver
+
+## Backend
+### Разработка
+```powershell
+cd Backend
+python -m venv venv
+cd venv/Scripts
+activate
+cd ../../
+pip install -r requirements.txt
+cd LMS_Fogstream
+python .\manage.py runserver
 ```
+## Frontend
+
+## Требования
+
+- **NodeJS** ^16.13.1
+
+### Разработка
+```powershell
+cd Frontend
+npm i
+npm run dev
+```
+
