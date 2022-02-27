@@ -8,7 +8,7 @@ from .serializers import (
     GroupListSerializer,
     UserProfileSerializer,
 )
-from .permisions import IsOwnerProfileOrReadOnly
+from .permisions import IsOwnerProfileOrReadOnly, TeacherPermission
 
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.middleware import csrf
@@ -33,14 +33,14 @@ class GroupList(generics.ListAPIView):
     """Список групп"""
     queryset = Group.objects.all()
     serializer_class = GroupListSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [TeacherPermission, IsAuthenticated]
 
 
 class UserProfileListCreateView(generics.ListCreateAPIView):
     """Выдает все профили пользователей"""
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [TeacherPermission]
 
     def perform_create(self, serializer):
         user = self.request.user
@@ -80,9 +80,9 @@ class LoginView(APIView):
                     samesite = settings.SIMPLE_JWT['AUTH_COOKIE_SAMESITE']
                 )
                 csrf.get_token(request)
-                response.data = {"Success" : "Login successfully","data":data}
+                response.data = {"Success": "Login successfully"}
                 return response
             else:
-                return Response({"No active" : "This account is not active!!"}, status=status.HTTP_404_NOT_FOUND)
+                return Response({"No active": "This account is not active!!"}, status=status.HTTP_404_NOT_FOUND)
         else:
-            return Response({"Invalid" : "Invalid username or password!!"}, status=status.HTTP_404_NOT_FOUND)
+            return Response({"Invalid": "Invalid username or password!!"}, status=status.HTTP_404_NOT_FOUND)
