@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Course, Group
+from .models import Course, Group, UserProfile
 
 
 class GroupSerializer(serializers.ModelSerializer):
@@ -35,3 +35,12 @@ class GroupListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Group
         fields = ("__all__")
+
+
+class UserProfileSerializer(serializers.ModelSerializer):
+    """Профиль пользователя"""
+    user = serializers.StringRelatedField(read_only=True)
+
+    class Meta:
+        model = UserProfile
+        fields = '__all__'
