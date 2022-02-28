@@ -9,8 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@faker-js/faker": "^6.0.0-alpha.7",
+    "@fontsource/inter": "^4.5.4",
+    "@fontsource/raleway": "^4.5.3",
+    "@heroicons/react": "^1.0.5",
     "dayjs": "^1.10.7",
     "formik": "^2.2.9",
+    "framer-motion": "^6.2.8",
     "lazy.js": "^0.5.1",
     "lodash": "^4.17.21",
     "next": "12.1.0",
