@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import Container from 'app/layouts/Container';
 import Logo from '@/brands/Logo';
 import Link from 'next/link';
+import classnames from 'classnames';
 import { ButtonLink } from './Button';
 
 type User = {
@@ -26,7 +27,11 @@ const Header = ({ navigation, className, user, ...props }: Props) => {
   )), [navigation]);
 
   return (
-    <div className={`py-4 px-8 border border-neutral-100 bg-white shadow-neutral-300 ${className}`} {...props}>
+    <div
+      className={classnames(`py-4 px-8 border border-neutral-100
+    bg-white shadow-neutral-300`, className)}
+      {...props}
+    >
       <Container>
         <div className="flex items-center">
           <Link href="/education">

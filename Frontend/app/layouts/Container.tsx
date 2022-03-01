@@ -1,9 +1,10 @@
 import React from 'react';
+import classnames from 'classnames';
 
 type Props = React.HTMLAttributes<HTMLDivElement>;
 
 const Container = ({ children, className, ...props }: Props) => (
-  <div className={`container mx-auto ${className}`} {...props}>
+  <div className={classnames('container mx-auto', className)} {...props}>
     { children }
   </div>
 );

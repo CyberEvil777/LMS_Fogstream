@@ -1,12 +1,16 @@
 import React from 'react';
-import Container from 'app/layouts/Container';
 import { HeartIcon } from '@heroicons/react/solid';
-import Logo from '@/brands/Logo';
+import classnames from 'classnames';
+import Container from '@/layouts/Container';
 
 type Props = React.HTMLAttributes<HTMLDivElement>;
 
 const Footer = ({ className, ...props }: Props) => (
-  <div className={`py-4 px-8 border border-neutral-100 bg-white shadow-neutral-300 ${className}`} {...props}>
+  <div
+    className={classnames(`py-4 px-8 border border-neutral-100
+      bg-white shadow-neutral-300`, className)}
+    {...props}
+  >
     <Container className="flex justify-between text-neutral-500 text-sm">
       <p>© 2022 Education. All right reserved</p>
       <p>
