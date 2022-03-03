@@ -1,13 +1,10 @@
 import React, { useMemo } from 'react';
-import Container from 'app/layouts/Container';
-import Logo from '@/brands/Logo';
-import Link from 'next/link';
 import classnames from 'classnames';
+import Link from 'next/link';
+import Container from '@/layouts/Container';
+import Logo from '@/brands/Logo';
+import { User } from '@/types';
 import { ButtonLink } from './Button';
-
-type User = {
-  id: string;
-};
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
   user: User;

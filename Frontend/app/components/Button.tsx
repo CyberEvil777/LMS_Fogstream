@@ -74,3 +74,16 @@ export const ButtonToggler = ({
     </div>
   );
 };
+
+/* <Link href="/education/lessons/1" passHref>
+  <a>
+    <Button
+      className="border hover:bg-neutral-200
+    transition-colors duration-150 text-black w-40 flex
+    justify-center items-center mr-10"
+    >
+      {buttonLabel}
+      <ArrowRightIcon className="h-3 ml-3" />
+    </Button>
+  </a>
+</Link> */
