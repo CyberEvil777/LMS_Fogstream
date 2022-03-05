@@ -19,7 +19,7 @@ const Panel = ({ title, description, image, className, ...props }: Props) => (
       <p>{description}</p>
     </div>
     {/* TODO: проставить нормальные размеры */}
-    <div className="relative w-2/6 pr-12">
+    <div className="relative w-1/3 sm:w-1/2 md:w-2/6 pr-12">
       <Image
         layout="fill"
         objectFit="cover"

@@ -1,28 +1,37 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { NextPage } from 'next';
-import { CheckIcon } from '@heroicons/react/outline';
+import { DocumentIcon, DownloadIcon, CheckIcon } from '@heroicons/react/outline';
+import { motion, Variants } from 'framer-motion';
 import Header from '@/components/Header';
 import { config } from '@/config';
 import Container from '@/layouts/Container';
 import Title from '@/components/Title';
 import Footer from '@/components/Footer';
-import Button from '@/components/Button';
+import LessonComponent from '@/components/Lesson';
+import { StatusLabel } from '@/components/Status';
+import { LessonType } from '@/types';
+import { useCounts } from '@/utils/hooks';
+import Button, { ButtonToggler } from '@/components/Button';
+import Link from 'next/link';
+import dayjs from 'dayjs';
 import SidebarSection, { SidebarComments } from '@/components/Sidebar';
-import { videoLesson, user, course } from '@/utils/fake';
-import { LessonFooter } from '@/components/Article';
+import { user, course, lectionLesson } from '@/utils/fake';
+import { Article, LessonFooter, AttachedComponent } from '@/components/Article';
 
 const Page: NextPage = () => {
-  const [completed, setCompleted] = useState(videoLesson.completed);
+  const [completed, setCompleted] = useState(lectionLesson.completed);
 
   return (
     <div className="h-screen flex flex-col">
       <Header className="mb-10" navigation={config.navigation} user={user} />
       <Container className="grow mb-10">
-        <Title title={videoLesson.title} subtitle={course.title} />
+        <Title className="mb-5" title={lectionLesson.title} subtitle={course.title} />
         <div className="flex flex-col lg:flex-row">
-          <div className="flex flex-grow flex-col mb-8 sm:mr-0 lg:mr-8 lg:mb-0">
-            <div className="aspect-video w-full bg-neutral-100 mb-10" />
-            <LessonFooter description={videoLesson.description} files={videoLesson.files} />
+          <div className="flex-grow sm:mr-0 mb-8 lg:mr-8 sm:mb-8 lg:mb-0">
+            <div className="border border-neutral-100 px-10 py-12 xl:py-24 mb-10 ">
+              
+            </div>
+            <LessonFooter description={lectionLesson.description} files={lectionLesson.files} />
           </div>
           <div className="flex-shrink-0 lg:w-1/3 sm:w-full">
             <SidebarSection className="mb-6" title="My tasks">
@@ -45,7 +54,7 @@ const Page: NextPage = () => {
               }
             </SidebarSection>
             <SidebarSection title="Discuss">
-              <SidebarComments comments={videoLesson.comments} />
+              <SidebarComments comments={lectionLesson.comments} />
             </SidebarSection>
           </div>
         </div>

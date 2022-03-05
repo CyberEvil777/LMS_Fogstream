@@ -1,16 +1,18 @@
-import { LessonType } from '@/types';
+import { Category, Course, LessonLection, LessonType, LessonVideo, User } from '@/types';
 
-export const user = { id: 1 };
+export const user: User = { id: 1 };
 
-export const course = {
+export const course: Course = {
   title: 'Firewall Course',
-  description: 'We need to input the multi-byte SAS pixel!',
-  color: '#cf75ff',
-  complete: 12,
+  shortDescription: 'We need to input the multi-byte SAS pixel!',
+  description: 'aNon modo mihi magis faciem, deos fratres utilibus, luctante coniciunt hospes!Licet ciboque, renasci desierim dixit: lacrimae: sed. A surgimus, pax ministret,lapillo: frustra pro est superi? Miscent reccidimus abstulit casa: aves \n\ndumque;hanc et hosti consumpserat etiam?Dum Solem est auras metuenda terque cognovit reddere. Acti abit, ita inde etsuos *Indigetem armatus* sim dextram ordine procul, si neque sub matres aut.Vulnera et salices lugebat, ecce exoratis. Nulla in nunc Semina Aurora; eripis,puellae praeside.A concussit furit citus et omnia. Mei ferant grandiaque ora cum hinc.',
+  color: '#F28F3B',
+  completed: 4,
   lessons: 12,
+  image: '/lessons/lesson7.svg',
 };
 
-export const categoriesFromDB = [
+export const courseContent: Category[] = [
   {
     id: 0,
     title: 'Design. Main process',
@@ -21,7 +23,6 @@ export const categoriesFromDB = [
         description: 'Try to transmit the JBOD alarm, maybe it will index the back-end sensor!',
         type: LessonType.VIDEO,
         completed: false,
-        image: '/lessons/lesson6.svg',
       },
       {
         id: 2,
@@ -29,7 +30,6 @@ export const categoriesFromDB = [
         description: "You can't index the port without indexing the multi-byte JSON system!",
         type: LessonType.VIDEO,
         completed: false,
-        image: '/lessons/lesson2.svg',
       },
       {
         id: 3,
@@ -37,7 +37,6 @@ export const categoriesFromDB = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, modi possimus! Vel accusantium veritatis vitae obcaecati, eaque aliquid ea? Suscipit at nemo aut labore molestiae porro sapiente enim? Ipsa, commodi?',
         type: LessonType.TEST,
         completed: false,
-        image: '/lessons/lesson3.svg',
       },
       {
         id: 4,
@@ -45,7 +44,6 @@ export const categoriesFromDB = [
         description: "I'll hack the 1080p RAM pixel, that should monitor the SSL bus!",
         type: LessonType.VIDEO,
         completed: true,
-        image: '/lessons/lesson4.svg',
       },
       {
         id: 5,
@@ -53,7 +51,6 @@ export const categoriesFromDB = [
         description: "You can't hack the port without hacking the mobile RSS monitor!",
         type: LessonType.VIDEO,
         completed: false,
-        image: '/lessons/lesson5.svg',
       },
       {
         id: 6,
@@ -61,7 +58,6 @@ export const categoriesFromDB = [
         description: "connecting the bus won't do anything, we need to input the haptic SAS feed!",
         type: LessonType.VIDEO,
         completed: true,
-        image: '/lessons/lesson7.svg',
       },
     ],
   },
@@ -75,7 +71,6 @@ export const categoriesFromDB = [
         description: "indexing the alarm won't do anything, we need to transmit the primary RAM port!",
         type: LessonType.VIDEO,
         completed: false,
-        image: '/lessons/lesson8.svg',
       },
       {
         id: 2,
@@ -83,7 +78,6 @@ export const categoriesFromDB = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, modi possimus! Vel accusantium veritatis vitae obcaecati, eaque aliquid ea? Suscipit at Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, modi possimus! Vel accusantium veritatis vitae obcaecati, eaque aliquid ea? Suscipit at nemo aut labore molestiae porro sapiente enim? Ipsa, commodi? nemo aut labore molestiae porro sapiente enim? Ipsa, commodi? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, modi possimus! Vel accusantium veritatis vitae obcaecati, eaque aliquid ea? Suscipit at nemo aut labore molestiae porro sapiente enim? Ipsa, commodi?',
         type: LessonType.VIDEO,
         completed: true,
-        image: '/lessons/lesson1.svg',
       },
       {
         id: 3,
@@ -91,7 +85,6 @@ export const categoriesFromDB = [
         description: "I'll copy the haptic HTTP firewall, that should driver the SSL panel!",
         type: LessonType.LECTION,
         completed: true,
-        image: '/lessons/lesson5.svg',
       },
       {
         id: 4,
@@ -99,7 +92,6 @@ export const categoriesFromDB = [
         description: 'The THX bandwidth is down, navigate the cross-platform array so we can input the XSS firewall!',
         type: LessonType.TEST,
         completed: false,
-        image: '/lessons/lesson2.svg',
       },
       {
         id: 5,
@@ -107,7 +99,6 @@ export const categoriesFromDB = [
         description: 'Try to generate the SQL bandwidth, maybe it will navigate the online circuit!',
         type: LessonType.TEST,
         completed: false,
-        image: '/lessons/lesson3.svg',
       },
       {
         id: 6,
@@ -115,15 +106,15 @@ export const categoriesFromDB = [
         description: 'Use the bluetooth CSS pixel, then you can program the back-end application!',
         type: LessonType.LECTION,
         completed: true,
-        image: '/lessons/lesson4.svg',
       },
     ],
   },
 ];
 
-export const courses = [{
+export const courses: Course[] = [{
   title: 'bandwidth course',
-  description: 'Use the mobile HDD circuit, then you can override the digital firewall!',
+  shortDescription: 'Use the mobile HDD circuit, then you can override the digital firewall!',
+  description: 'aNon modo mihi magis faciem, deos fratres utilibus, luctante coniciunt hospes!Licet ciboque, renasci desierim dixit: lacrimae: sed. A surgimus, pax ministret,lapillo: frustra pro est superi? Miscent reccidimus abstulit casa: aves dumque;hanc et hosti consumpserat etiam?Dum Solem est auras metuenda terque cognovit reddere. Acti abit, ita inde etsuos *Indigetem armatus* sim dextram ordine procul, si neque sub matres aut.Vulnera et salices lugebat, ecce exoratis. Nulla in nunc Semina Aurora; eripis,puellae praeside.A concussit furit citus et omnia. Mei ferant grandiaque ora cum hinc procullongius, naves omen: quid viderat! Intus et caesa sit subtemen comitesque fuit.Sertaque adhuc quoque contemptor et neque mille sonitum et dignamur moveremulcet bisque ante actis ullis sic. Feris Minos, has amicas ruinas Threiciamnatantes coniuge, annum ficti Aglauros ambagum de Hymetti deficiunt quinfalsoque quod.',
   color: '#F28F3B',
   completed: 4,
   lessons: 12,
@@ -131,7 +122,8 @@ export const courses = [{
 },
 {
   title: 'system love',
-  description: 'If we bypass the protocol, we can get to the PCI card through the neural ADP transmitter!',
+  shortDescription: 'If we bypass the protocol, we can get to the PCI card through the neural ADP transmitter!',
+  description: 'aNon modo mihi magis faciem, deos fratres utilibus, luctante coniciunt hospes!Licet ciboque, renasci desierim dixit: lacrimae: sed. A surgimus, pax ministret,lapillo: frustra pro est superi? Miscent reccidimus abstulit casa: aves dumque;hanc et hosti consumpserat etiam?Dum Solem est auras metuenda terque cognovit reddere. Acti abit, ita inde etsuos *Indigetem armatus* sim dextram ordine procul, si neque sub matres aut.Vulnera et salices lugebat, ecce exoratis. Nulla in nunc Semina Aurora; eripis,puellae praeside.A concussit furit citus et omnia. Mei ferant grandiaque ora cum hinc procullongius, naves omen: quid viderat! Intus et caesa sit subtemen comitesque fuit.Sertaque adhuc quoque contemptor et neque mille sonitum et dignamur moveremulcet bisque ante actis ullis sic. Feris Minos, has amicas ruinas Threiciamnatantes coniuge, annum ficti Aglauros ambagum de Hymetti deficiunt quinfalsoque quod.',
   color: '#EF233C',
   completed: 8,
   lessons: 32,
@@ -139,7 +131,8 @@ export const courses = [{
 },
 {
   title: 'monitor ckrack',
-  description: 'We need to index the solid state SMTP hard drive!',
+  shortDescription: 'We need to index the solid state SMTP hard drive!',
+  description: 'aNon modo mihi magis faciem, deos fratres utilibus, luctante coniciunt hospes!Licet ciboque, renasci desierim dixit: lacrimae: sed. A surgimus, pax ministret,lapillo: frustra pro est superi? Miscent reccidimus abstulit casa: aves dumque;hanc et hosti consumpserat etiam?Dum Solem est auras metuenda terque cognovit reddere. Acti abit, ita inde etsuos *Indigetem armatus* sim dextram ordine procul, si neque sub matres aut.Vulnera et salices lugebat, ecce exoratis. Nulla in nunc Semina Aurora; eripis,puellae praeside.A concussit furit citus et omnia. Mei ferant grandiaque ora cum hinc procullongius, naves omen: quid viderat! Intus et caesa sit subtemen comitesque fuit.Sertaque adhuc quoque contemptor et neque mille sonitum et dignamur moveremulcet bisque ante actis ullis sic. Feris Minos, has amicas ruinas Threiciamnatantes coniuge, annum ficti Aglauros ambagum de Hymetti deficiunt quinfalsoque quod.',
   color: '#000000',
   completed: 5,
   lessons: 16,
@@ -147,7 +140,8 @@ export const courses = [{
 },
 {
   title: 'feed doggy style',
-  description: 'If we hack the microchip, we can get to the SQL card through the optical IB matrix!',
+  shortDescription: 'If we hack the microchip, we can get to the SQL card through the optical IB matrix!',
+  description: 'aNon modo mihi magis faciem, deos fratres utilibus, luctante coniciunt hospes!Licet ciboque, renasci desierim dixit: lacrimae: sed. A surgimus, pax ministret,lapillo: frustra pro est superi? Miscent reccidimus abstulit casa: aves dumque;hanc et hosti consumpserat etiam?Dum Solem est auras metuenda terque cognovit reddere. Acti abit, ita inde etsuos *Indigetem armatus* sim dextram ordine procul, si neque sub matres aut.Vulnera et salices lugebat, ecce exoratis. Nulla in nunc Semina Aurora; eripis,puellae praeside.A concussit furit citus et omnia. Mei ferant grandiaque ora cum hinc procullongius, naves omen: quid viderat! Intus et caesa sit subtemen comitesque fuit.Sertaque adhuc quoque contemptor et neque mille sonitum et dignamur moveremulcet bisque ante actis ullis sic. Feris Minos, has amicas ruinas Threiciamnatantes coniuge, annum ficti Aglauros ambagum de Hymetti deficiunt quinfalsoque quod.',
   color: '#f20088',
   completed: 0,
   lessons: 8,
@@ -155,7 +149,8 @@ export const courses = [{
 },
 {
   title: 'firewall',
-  description: 'We need to input the multi-byte SAS pixel!',
+  shortDescription: 'We need to input the multi-byte SAS pixel!',
+  description: 'aNon modo mihi magis faciem, deos fratres utilibus, luctante coniciunt hospes!Licet ciboque, renasci desierim dixit: lacrimae: sed. A surgimus, pax ministret,lapillo: frustra pro est superi? Miscent reccidimus abstulit casa: aves dumque;hanc et hosti consumpserat etiam?Dum Solem est auras metuenda terque cognovit reddere. Acti abit, ita inde etsuos *Indigetem armatus* sim dextram ordine procul, si neque sub matres aut.Vulnera et salices lugebat, ecce exoratis. Nulla in nunc Semina Aurora; eripis,puellae praeside.A concussit furit citus et omnia. Mei ferant grandiaque ora cum hinc procullongius, naves omen: quid viderat! Intus et caesa sit subtemen comitesque fuit.Sertaque adhuc quoque contemptor et neque mille sonitum et dignamur moveremulcet bisque ante actis ullis sic. Feris Minos, has amicas ruinas Threiciamnatantes coniuge, annum ficti Aglauros ambagum de Hymetti deficiunt quinfalsoque quod.',
   color: '#cf75ff',
   completed: 12,
   lessons: 12,
@@ -163,20 +158,21 @@ export const courses = [{
 },
 {
   title: 'matrix',
-  description: "synthesizing the system won't do anything, we need to connect the online PCI transmitter!",
+  shortDescription: "synthesizing the system won't do anything, we need to connect the online PCI transmitter!",
+  description: 'aNon modo mihi magis faciem, deos fratres utilibus, luctante coniciunt hospes!Licet ciboque, renasci desierim dixit: lacrimae: sed. A surgimus, pax ministret,lapillo: frustra pro est superi? Miscent reccidimus abstulit casa: aves dumque;hanc et hosti consumpserat etiam?Dum Solem est auras metuenda terque cognovit reddere. Acti abit, ita inde etsuos *Indigetem armatus* sim dextram ordine procul, si neque sub matres aut.Vulnera et salices lugebat, ecce exoratis. Nulla in nunc Semina Aurora; eripis,puellae praeside.A concussit furit citus et omnia. Mei ferant grandiaque ora cum hinc procullongius, naves omen: quid viderat! Intus et caesa sit subtemen comitesque fuit.Sertaque adhuc quoque contemptor et neque mille sonitum et dignamur moveremulcet bisque ante actis ullis sic. Feris Minos, has amicas ruinas Threiciamnatantes coniuge, annum ficti Aglauros ambagum de Hymetti deficiunt quinfalsoque quod.',
   color: '#5FBFF9',
   completed: 7,
   lessons: 14,
   image: '/lessons/lesson6.svg',
 }];
 
-export const lesson = {
+export const videoLesson: LessonVideo = {
   id: 1,
   title: 'Transmitter Battle',
   description: 'Try to transmit the JBOD alarm, maybe it will index the back-end sensor! Lorem ipsum dolor,\nsit amet consectetur adipisicing elit. Cum inventore ab nam! Dolores recusandae officia facilis ad culpa nostrum ducimus molestiae aspernatur,\n quae autem molestias exercitationem excepturi deserunt perferendis aut? Lorem ipsum dolor, sit amet\n consectetur adipisicing elit. Cum inventore ab nam! Dolores recusandae officia facilis ad culpa nostrum ducimus molestiae aspernatur, quae autem molestias exercitationem excepturi deserunt perferendis aut? Lorem ipsum dolor, sit amet consectetur adipisicing elit.\n Cum inventore ab nam! Dolores recusandae officia facilis ad culpa nostrum ducimus molestiae aspernatur, quae autem molestias exercitationem\n excepturi deserunt perferendis aut?',
   type: LessonType.VIDEO,
   completed: false,
-  image: '/lessons/lesson6.svg',
+  video: '',
   comments: [
     {
       id: 1,
@@ -239,6 +235,89 @@ export const lesson = {
       title: 'AWawdjkaiofjesoifjsf',
       description: 'awd jwaoid jawiod jawiodj awiodj awoidj awiodj awd',
       url: '/favicon.ico',
+    },
+  ],
+};
+
+export const lectionLesson: LessonLection = {
+  id: 2,
+  title: 'Another Good Lection',
+  description: 'You will understand how SSL works',
+  type: LessonType.LECTION,
+  completed: false,
+  content: `
+  ## Prensamque cornua aera cumulusque pallam sanguine dimittite
+  
+  *Lorem* markdownum annis; degeneras crepuscula bicoloribus erraverit, recurva
+  suas: vetat felix equos. Nunc dolore quicquid, ponere pittheam in eundi
+  insequitur vitam quaesita ac novi veneratur possit lanas tamen Iuno! Quattuor
+  vultumque noster. Aut tamen quoque ad nunc ludit sim *maeonis petis si* frequens
+  illis; medioque guttae exspatiemur illic: inde.
+  
+  > Morte illis viresque illis! Calidis movebo linoque. Refert quam Liber posse
+  > trepidare inplet a colit tamen forma.
+  
+  ## Et viri Pelasgas curam capax
+  
+  Huic plurima et ergo: cum, semiferos at lumina omnibus bacchae Lethaea
+  gravidamve fugerat. Mersurum iuvencam velit, aera dum [frementi
+  viventia](http://www.superbumvulneret.net/) ille cunctantem citius. Salutis
+  saepe cadunt populisque, quoque enim, **detegeret** scopulis? Patior mihi
+  vestem, et opem mixta medullas venerat forma nympharum, Persephones nidor vires.
+  Impediebat quoniam remanet ossibus Aonios.
+
+  ![header](/header.jpg)
+  
+  ## Ales cum
+  
+  Cur in cupiunt quemque longo videre, illa tamen finite et resonant aurata
+  reponere quicquam cum genitor tamen telo fatale! Magna sacras. Venistis Sospite.
+  
+      key(seo_bit_on, programIrcBasic(driveMainframeSoftware(-4, coreAix,
+              kbps_word_bookmark), excel(access_bar, 913156, -5), rw_fifo_server),
+              kbpsRoomNtfs * olap_and + -2 + click);
+      if (uri) {
+          grayscale_multi_ping(3);
+      }
+      if (mbps) {
+          matrix(passiveSocial, lock_start);
+          backsideWebSnow = 4;
+      } else {
+          cell_metal_click /= 3;
+          compactDropHardware(bookmark, prebinding, 3 + trash);
+          codecE = 3;
+      }
+      if (uat_host + mp_card / soap) {
+          link.dac_bar(upnp, wysiwyg(42455, 4));
+          ipod_cdn(vdu(4, clockRgb, windows_infringement_clean));
+      }
+      dvd_system_token(favicon_file_flops.ram(-4, publishing_version_repeater) +
+              1);
+  
+  ## Successibus tamen est populi ossa nec puerosque
+  
+  Non modo mihi magis faciem, deos fratres utilibus, luctante coniciunt hospes!
+  Licet ciboque, renasci desierim dixit: lacrimae: sed. A surgimus, pax ministret,
+  lapillo: frustra pro est superi? Miscent reccidimus abstulit casa: aves dumque;
+  hanc et hosti consumpserat etiam?
+  
+  Dum Solem est auras metuenda terque cognovit reddere. Acti abit, ita inde et
+  suos *Indigetem armatus* sim dextram ordine procul, si neque sub matres aut.
+  Vulnera et salices lugebat, ecce exoratis. Nulla in nunc Semina Aurora; eripis,
+  puellae praeside.
+  
+  A concussit furit citus et omnia. Mei ferant grandiaque ora cum hinc procul
+  longius, naves omen: quid viderat! Intus et caesa sit subtemen comitesque fuit.
+  Sertaque adhuc quoque contemptor et neque mille sonitum et dignamur movere
+  mulcet bisque ante actis ullis sic. Feris Minos, has amicas ruinas Threiciam
+  natantes coniuge, annum ficti Aglauros ambagum de Hymetti deficiunt quin
+  falsoque quod.`,
+  files: [
+    {
+      id: 1,
+      title: 'awjndoiwa jdioawj dioawjd ioaw',
+      description: 'awd jwaoid jawiod jawiodj awiodj awoidj awiodj awd',
+      url: '/vercel.svg',
     },
   ],
 };
