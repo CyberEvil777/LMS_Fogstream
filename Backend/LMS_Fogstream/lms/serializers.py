@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Course, Group, UserProfile
+from .models import Course, Group, Lessons, Lecture
 
 
 class GroupSerializer(serializers.ModelSerializer):
@@ -11,19 +11,35 @@ class GroupSerializer(serializers.ModelSerializer):
         fields = ("name",)
 
 
+class LectureSerializer(serializers.ModelSerializer):
+    """Урок серилизация"""
+
+    class Meta:
+        model = Lecture
+        fields = ("name", "description")
+
+
+class LessonsSerializer(serializers.ModelSerializer):
+    """Урок серилизация"""
+
+    class Meta:
+        model = Lessons
+        fields = ("name", "description")
+
+
 class CourseListSerializer(serializers.ModelSerializer):
-    """Список фильмов"""
+    """Список курсов"""
     id = serializers.IntegerField(read_only=True)
-    groups = GroupSerializer(many=True)
 
     class Meta:
         model = Course
-        fields = ("id", "groups", "picture")
+        fields = ("id", "picture")
 
 
 class CourseDetailSerializer(serializers.ModelSerializer):
-    """Полный фильм"""
+    """Полные детали курса"""
     category = serializers.SlugRelatedField(slug_field="name", read_only=True)
+    lessons = LessonsSerializer(many=True)
 
     class Meta:
         model = Course
@@ -31,16 +47,16 @@ class CourseDetailSerializer(serializers.ModelSerializer):
 
 
 class GroupListSerializer(serializers.ModelSerializer):
-    """Список фильмов"""
+    """Список групп"""
     class Meta:
         model = Group
         fields = ("__all__")
 
 
-class UserProfileSerializer(serializers.ModelSerializer):
-    """Профиль пользователя"""
-    user = serializers.StringRelatedField(read_only=True)
-
-    class Meta:
-        model = UserProfile
-        fields = '__all__'
+# class UserProfileSerializer(serializers.ModelSerializer):
+#     """Профиль пользователя"""
+#     user = serializers.StringRelatedField(read_only=True)
+#
+#     class Meta:
+#         model = UserProfile
+#         fields = '__all__'

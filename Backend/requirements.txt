@@ -4,3 +4,4 @@ Pillow==9.0.1
 psycopg2==2.9.3
 djoser==2.1.0
 djangorestframework-simplejwt==4.8.0
+django-cors-headers==3.11.0
