@@ -40,15 +40,24 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'drf_yasg',
+    # required for serving swagger ui's css/js files
     'rest_framework',
     'djoser',
     'rest_framework_simplejwt',
+<<<<<<< Updated upstream
     'corsheaders',
 
     'lms',
     'accounts',
     'task',
+=======
+    'video_hosting',
+    'lms',
+
+>>>>>>> Stashed changes
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -63,10 +72,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'LMS_Fogstream.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
