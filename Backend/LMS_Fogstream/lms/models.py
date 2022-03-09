@@ -1,7 +1,12 @@
 from django.db import models
 from datetime import date
+<<<<<<< Updated upstream
 
 # from django.contrib.auth.models import User
+=======
+from video_hosting.models import Video
+from django.contrib.auth.models import User
+>>>>>>> Stashed changes
 
 
 class Category(models.Model):
@@ -17,6 +22,7 @@ class Category(models.Model):
         verbose_name_plural = "Категории"
 
 
+<<<<<<< Updated upstream
 class Video(models.Model):
     """Видео"""
     name = models.CharField("Название видео", max_length=100)
@@ -30,6 +36,8 @@ class Video(models.Model):
         verbose_name_plural = "Видео"
 
 
+=======
+>>>>>>> Stashed changes
 class Lecture(models.Model):
     """Лекция"""
     title = models.CharField("Название лекции", max_length=100)
@@ -87,6 +95,27 @@ class Lessons(models.Model):
         verbose_name = "Урок"
         verbose_name_plural = "Уроки"
 
+<<<<<<< Updated upstream
+=======
+class Task(models.Model):
+    """Задания"""
+    title = models.CharField("Название задачи", max_length=100)
+    description = models.TextField("Описание")
+    initial_data = models.DateField("Срок", default=date.today)
+    scores = models.PositiveSmallIntegerField("Баллы", default=1)
+    draft = models.BooleanField("Черновик", default=False)
+    lessons = models.ForeignKey(
+        Lessons, verbose_name="Урок", on_delete=models.SET_NULL, null=True
+    )
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Задача"
+        verbose_name_plural = "Задачи"
+
+>>>>>>> Stashed changes
 
 class Group(models.Model):
     """Группа"""

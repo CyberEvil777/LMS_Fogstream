@@ -53,6 +53,7 @@ class GroupListSerializer(serializers.ModelSerializer):
         fields = ("__all__")
 
 
+<<<<<<< Updated upstream
 # class UserProfileSerializer(serializers.ModelSerializer):
 #     """Профиль пользователя"""
 #     user = serializers.StringRelatedField(read_only=True)
@@ -60,3 +61,13 @@ class GroupListSerializer(serializers.ModelSerializer):
 #     class Meta:
 #         model = UserProfile
 #         fields = '__all__'
+=======
+class UserProfileSerializer(serializers.ModelSerializer):
+    """Профиль пользователя"""
+    user = serializers.StringRelatedField(read_only=True)
+
+    class Meta:
+        model = UserProfile
+        fields = '__all__'
+
+>>>>>>> Stashed changes
