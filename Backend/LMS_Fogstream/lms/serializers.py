@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Course, Group, Lessons, Lecture
+from .models import Course, Group, Lessons, LessonCategory
 
 
 class GroupSerializer(serializers.ModelSerializer):
@@ -11,12 +11,12 @@ class GroupSerializer(serializers.ModelSerializer):
         fields = ("name",)
 
 
-class LectureSerializer(serializers.ModelSerializer):
-    """Урок серилизация"""
-
-    class Meta:
-        model = Lecture
-        fields = ("name", "description")
+# class LectureSerializer(serializers.ModelSerializer):
+#     """Урок серилизация"""
+#
+#     class Meta:
+#         model = Lecture
+#         fields = ("name", "description")
 
 
 class LessonsSerializer(serializers.ModelSerializer):
@@ -24,7 +24,23 @@ class LessonsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Lessons
-        fields = ("name", "description")
+        fields = ("id", "title", "description", "type", "completed")
+
+
+class LectionSerializer(serializers.ModelSerializer):
+    """Лекции список"""
+
+    class Meta:
+        model = Lessons
+        fields = ("id", "title", "description")
+
+
+class LectionDetailSerializer(serializers.ModelSerializer):
+    """Лекции детали"""
+
+    class Meta:
+        model = Lessons
+        fields = ("id", "title", "description", "type", "completed", "lecture", )
 
 
 class CourseListSerializer(serializers.ModelSerializer):
@@ -33,17 +49,24 @@ class CourseListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Course
-        fields = ("id", "picture")
+        fields = ("id", "title", "short_description", "picture")
+
+
+class LessonShortCategorySerializer(serializers.ModelSerializer):
+    """Категории уроков"""
+
+    class Meta:
+        model = LessonCategory
+        fields = ("id", "title")
 
 
 class CourseDetailSerializer(serializers.ModelSerializer):
     """Полные детали курса"""
-    category = serializers.SlugRelatedField(slug_field="name", read_only=True)
-    lessons = LessonsSerializer(many=True)
+    lessons_cat_course = LessonShortCategorySerializer(many=True)
 
     class Meta:
         model = Course
-        exclude = ("draft",)
+        fields = ("title", "short_description", "picture", "lessons_cat_course")
 
 
 class GroupListSerializer(serializers.ModelSerializer):
@@ -51,6 +74,16 @@ class GroupListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Group
         fields = ("__all__")
+
+
+class LessonCategorySerializer(serializers.ModelSerializer):
+    """Категории уроков"""
+    all_lessons = LessonsSerializer(many=True)
+
+    class Meta:
+        model = LessonCategory
+        fields = ("id", "title", "all_lessons")
+
 
 
 # class UserProfileSerializer(serializers.ModelSerializer):
