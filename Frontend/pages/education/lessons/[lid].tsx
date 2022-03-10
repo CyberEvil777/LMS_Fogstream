@@ -1,13 +1,15 @@
 import React from 'react';
 import Button from '@/components/Button';
+import { useRouter } from 'next/router';
 
 const Page = () => {
-  console.log('Hello World!');
+  const router = useRouter();
+
+  router.push('/education/lessons/lection')
+    .catch((e) => { throw e; });
 
   return (
     <div>
-      <p>Hello world!</p>
-      <Button />
     </div>
   );
 };
