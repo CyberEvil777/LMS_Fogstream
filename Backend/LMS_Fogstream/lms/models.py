@@ -17,40 +17,6 @@ class Category(models.Model):
         verbose_name_plural = "Категории"
 
 
-<<<<<<< Updated upstream
-class Video(models.Model):
-    """Видео"""
-    name = models.CharField("Название видео", max_length=100)
-    file = models.URLField("Видео-урок", max_length=200)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        verbose_name = "Видео"
-        verbose_name_plural = "Видео"
-
-
-# class Lecture(models.Model):
-#     """Лекция"""
-#     title = models.CharField("Название лекции", max_length=100)
-#     description = models.TextField("Описание")
-#     information = models.TextField("Информация")
-#     video = models.ForeignKey(
-#         Video, verbose_name="Видео-урок", on_delete=models.SET_NULL, null=True, blank=True
-#     )
-#     draft = models.BooleanField("Черновик", default=False)
-#
-#     def __str__(self):
-#         return self.title
-#
-#     class Meta:
-#         verbose_name = "Лекция"
-#         verbose_name_plural = "Лекции"
-
-
-=======
->>>>>>> Stashed changes
 class Course(models.Model):
     """Курсы"""
     category = models.ForeignKey(
@@ -133,14 +99,6 @@ class Group(models.Model):
         verbose_name_plural = "Группы"
 
 
-<<<<<<< Updated upstream
-
-
-
-
-
-=======
->>>>>>> Stashed changes
 class Review(models.Model):
         """Отзывы"""
         email = models.EmailField()
@@ -157,9 +115,3 @@ class Review(models.Model):
             verbose_name = "Отзыв"
             verbose_name_plural = "Отзывы"
 
-<<<<<<< Updated upstream
-            '''parent = models.ForeignKey(
-                'self', verbose_name="родитель", on_delete=models.SET_NULL, blank=True, null=True, related_name="children"
-                )'''
-=======
->>>>>>> Stashed changes

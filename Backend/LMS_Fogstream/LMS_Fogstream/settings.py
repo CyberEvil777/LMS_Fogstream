@@ -44,18 +44,12 @@ INSTALLED_APPS = [
     'djoser',
     'rest_framework_simplejwt',
     'corsheaders',
-<<<<<<< Updated upstream
-=======
     'drf_yasg',
->>>>>>> Stashed changes
 
     'lms',
     'accounts',
     'task',
-<<<<<<< Updated upstream
-=======
     'video_hosting',
->>>>>>> Stashed changes
 ]
 
 MIDDLEWARE = [
