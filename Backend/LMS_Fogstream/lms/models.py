@@ -17,6 +17,7 @@ class Category(models.Model):
         verbose_name_plural = "Категории"
 
 
+<<<<<<< Updated upstream
 class Video(models.Model):
     """Видео"""
     name = models.CharField("Название видео", max_length=100)
@@ -48,6 +49,8 @@ class Video(models.Model):
 #         verbose_name_plural = "Лекции"
 
 
+=======
+>>>>>>> Stashed changes
 class Course(models.Model):
     """Курсы"""
     category = models.ForeignKey(
@@ -130,16 +133,22 @@ class Group(models.Model):
         verbose_name_plural = "Группы"
 
 
+<<<<<<< Updated upstream
 
 
 
 
 
+=======
+>>>>>>> Stashed changes
 class Review(models.Model):
         """Отзывы"""
         email = models.EmailField()
         text = models.TextField("Сообщение", max_length=5000)
         course = models.ForeignKey(Course, verbose_name="курс", on_delete=models.CASCADE, related_name="reviews")
+        parent = models.ForeignKey(
+            'self', verbose_name="родитель", on_delete=models.SET_NULL, blank=True, null=True, related_name="children"
+        )
 
         def __str__(self):
             return f"{self.email} = {self.course}"
@@ -148,6 +157,9 @@ class Review(models.Model):
             verbose_name = "Отзыв"
             verbose_name_plural = "Отзывы"
 
+<<<<<<< Updated upstream
             '''parent = models.ForeignKey(
                 'self', verbose_name="родитель", on_delete=models.SET_NULL, blank=True, null=True, related_name="children"
                 )'''
+=======
+>>>>>>> Stashed changes

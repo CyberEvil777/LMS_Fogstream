@@ -44,10 +44,18 @@ INSTALLED_APPS = [
     'djoser',
     'rest_framework_simplejwt',
     'corsheaders',
+<<<<<<< Updated upstream
+=======
+    'drf_yasg',
+>>>>>>> Stashed changes
 
     'lms',
     'accounts',
     'task',
+<<<<<<< Updated upstream
+=======
+    'video_hosting',
+>>>>>>> Stashed changes
 ]
 
 MIDDLEWARE = [
@@ -66,7 +74,7 @@ ROOT_URLCONF = 'LMS_Fogstream.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
