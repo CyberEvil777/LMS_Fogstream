@@ -1,6 +1,7 @@
 from rest_framework import generics, status
 from rest_framework.permissions import IsAuthenticated
 from accounts.permissions import TeacherPermission
+from django.db import models
 
 from .models import Course, Group, Lessons, LessonCategory
 from .serializers import (
@@ -17,6 +18,12 @@ class CourseList(generics.ListAPIView):
     """Список курсов"""
     queryset = Course.objects.filter(draft=False)
     serializer_class = CourseListSerializer
+
+    # def get_queryset(self):
+    #     course = Course.objects.filter(draft=False).annotate(
+    #         lessons_count=models.Count()
+    #     )
+    #     return course
 
 
 class CourseDetailView(generics.RetrieveAPIView):
@@ -41,7 +48,7 @@ class GroupList(generics.ListAPIView):
     """Список групп"""
     queryset = Group.objects.all()
     serializer_class = GroupListSerializer
-    permission_classes = [TeacherPermission, IsAuthenticated]
+    # permission_classes = [TeacherPermission, IsAuthenticated]
 
 
 class LessonCategoryList(generics.ListAPIView):
