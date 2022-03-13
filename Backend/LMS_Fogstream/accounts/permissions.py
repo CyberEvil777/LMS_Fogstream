@@ -17,10 +17,18 @@ class TeacherPermission(BasePermission):
 
     def has_permission(self, request, view):
         if request.method == 'GET':
-            if UserProfile.objects.filter(is_creator=True):
+            if UserProfile.objects.filter(is_creator=True).exists():
                 return True
         return False
 
+
+# class UserPermission(BasePermission):
+#     """Права учителя"""
+#
+#     def has_permission(self, request, view):
+#         print(request.COOKIES['access_token'])
+#         print( request.user.is_authenticated)
+#         return bool(request.COOKIES['access_token'] and request.user.is_authenticated)
 
     # def has_object_permission(self, request, view, obj):
     #     if request.method in SAFE_METHODS:
