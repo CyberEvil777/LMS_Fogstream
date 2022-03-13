@@ -25,7 +25,7 @@ class UserProfileListCreateView(generics.ListCreateAPIView):
     """Выдает все профили пользователей"""
     queryset = UserProfile.objects.all()
     serializer_class = UserProfileSerializer
-    permission_classes = [IsAuthenticated,]
+    permission_classes = [TeacherPermission, IsAuthenticated]
 
     def perform_create(self, serializer):
         user = self.request.user

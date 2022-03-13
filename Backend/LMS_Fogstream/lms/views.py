@@ -18,6 +18,7 @@ class CourseList(generics.ListAPIView):
     """Список курсов"""
     queryset = Course.objects.filter(draft=False).only("id", "title", "short_description", "picture")
     serializer_class = CourseListSerializer
+    permission_classes = [IsAuthenticated]
 
     # def get_queryset(self):
     #     course = Course.objects.filter(draft=False).annotate(
@@ -32,6 +33,7 @@ class CourseDetailView(generics.RetrieveAPIView):
         filter(draft=False).\
         only("id", "title", "short_description", "picture")
     serializer_class = CourseDetailSerializer
+    permission_classes = [IsAuthenticated]
 
 
 class LessonsList(generics.ListAPIView):
@@ -39,6 +41,7 @@ class LessonsList(generics.ListAPIView):
     queryset = Lessons.objects.filter(draft=False).\
         values("id", "title", "description", "type", "completed")
     serializer_class = LessonsSerializer
+    permission_classes = [IsAuthenticated]
 
 
 class LectionDetailView(generics.RetrieveAPIView):
@@ -46,22 +49,25 @@ class LectionDetailView(generics.RetrieveAPIView):
     queryset = Lessons.objects.filter(type="lection").\
         values("id", "title", "description", "type", "completed", "lecture")
     serializer_class = LectionDetailSerializer
+    permission_classes = [IsAuthenticated]
 
 
 class GroupList(generics.ListAPIView):
     """Список групп"""
     queryset = Group.objects.all()
     serializer_class = GroupListSerializer
-    permission_classes = [TeacherPermission, IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
 
 class LessonCategoryList(generics.ListAPIView):
     """Список категорий уроков"""
     queryset = LessonCategory.objects.prefetch_related("all_lessons").only("id", "title")
     serializer_class = LessonCategorySerializer
+    permission_classes = [IsAuthenticated]
 
 
 class LessonCategoryDetailView(generics.RetrieveAPIView):
     """Детали категорий уроков"""
     queryset = LessonCategory.objects.prefetch_related("all_lessons").only("id", "title")
     serializer_class = LessonCategorySerializer
+    permission_classes = [IsAuthenticated]

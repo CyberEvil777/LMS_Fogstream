@@ -4,7 +4,8 @@ from .models import UserProfile
 
 class IsOwnerProfileOrReadOnly(BasePermission):
     """Права доступа для просмотра профиля
-       Профиль может смотреть только его владелец
+       Профиль могут смотреть все
+       Профиль может изменять только его владелец
     """
     def has_object_permission(self, request, view, obj):
         if request.method in SAFE_METHODS:
