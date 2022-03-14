@@ -4,7 +4,8 @@ from .models import UserProfile
 
 class IsOwnerProfileOrReadOnly(BasePermission):
     """Права доступа для просмотра профиля
-       Профиль может смотреть только его владелец
+       Профиль могут смотреть все
+       Профиль может изменять только его владелец
     """
     def has_object_permission(self, request, view, obj):
         if request.method in SAFE_METHODS:
@@ -16,11 +17,31 @@ class TeacherPermission(BasePermission):
     """Права учителя"""
 
     def has_permission(self, request, view):
+        print(request.data)
         if request.method == 'GET':
-            if UserProfile.objects.filter(is_creator=True):
+            if UserProfile.objects.filter(is_creator=True).exists():
                 return True
         return False
 
+
+# class StudentPermission(BasePermission):
+#     """Права учителя"""
+#
+#     def has_permission(self, request, view):
+#         if request.method == 'GET':
+#             print(request.data)
+#             if UserProfile.objects.filter(group).exists():
+#                 return True
+#         return False
+
+
+# class UserPermission(BasePermission):
+#     """Права учителя"""
+#
+#     def has_permission(self, request, view):
+#         print(request.COOKIES['access_token'])
+#         print( request.user.is_authenticated)
+#         return bool(request.COOKIES['access_token'] and request.user.is_authenticated)
 
     # def has_object_permission(self, request, view, obj):
     #     if request.method in SAFE_METHODS:

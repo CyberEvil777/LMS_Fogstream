@@ -2,6 +2,7 @@ from django.db import models
 from django.core.validators import FileExtensionValidator
 from datetime import date
 
+
 class Video(models.Model):
     """Видео"""
     title = models.CharField("Название", max_length=100)
