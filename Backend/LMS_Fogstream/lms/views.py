@@ -2,6 +2,9 @@ from rest_framework import generics, status
 from rest_framework.permissions import IsAuthenticated
 from accounts.permissions import TeacherPermission
 from django.db import models
+from django_filters.rest_framework import DjangoFilterBackend
+import django_filters.rest_framework as filters
+
 
 from .models import Course, Group, Lessons, LessonCategory
 from .serializers import (
@@ -19,12 +22,24 @@ class CourseList(generics.ListAPIView):
     queryset = Course.objects.filter(draft=False).only("id", "title", "short_description", "picture")
     serializer_class = CourseListSerializer
     permission_classes = [IsAuthenticated]
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['title', 'category']
 
     # def get_queryset(self):
     #     course = Course.objects.filter(draft=False).annotate(
     #         lessons_count=models.Count()
     #     )
     #     return course
+
+'''class SearchFilter(filters.CharField, filters.BaseInFilter):
+    pass
+
+class CourseFilter(filters.FilterSet):
+    category = SearchFilter(field_category='')
+
+    class Meta:
+        model = Course
+        fields = ['category']'''
 
 
 class CourseDetailView(generics.RetrieveAPIView):
@@ -42,7 +57,8 @@ class LessonsList(generics.ListAPIView):
         values("id", "title", "description", "type", "completed")
     serializer_class = LessonsSerializer
     permission_classes = [IsAuthenticated]
-
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['title', 'lesson_category']
 
 class LectionDetailView(generics.RetrieveAPIView):
     """Вывод детали лекции"""

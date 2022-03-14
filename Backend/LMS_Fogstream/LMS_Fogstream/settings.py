@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'ckeditor',
     'ckeditor_uploader',
+    'django_filters',
 
     'lms',
     'accounts',
@@ -173,6 +174,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
 
 DJOSER = {
