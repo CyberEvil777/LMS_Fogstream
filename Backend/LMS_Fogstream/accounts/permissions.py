@@ -17,10 +17,22 @@ class TeacherPermission(BasePermission):
     """Права учителя"""
 
     def has_permission(self, request, view):
+        print(request.data)
         if request.method == 'GET':
             if UserProfile.objects.filter(is_creator=True).exists():
                 return True
         return False
+
+
+# class StudentPermission(BasePermission):
+#     """Права учителя"""
+#
+#     def has_permission(self, request, view):
+#         if request.method == 'GET':
+#             print(request.data)
+#             if UserProfile.objects.filter(group).exists():
+#                 return True
+#         return False
 
 
 # class UserPermission(BasePermission):

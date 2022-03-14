@@ -2,7 +2,7 @@ from rest_framework import generics, status
 from rest_framework.permissions import IsAuthenticated
 
 from .models import UserProfile
-from .serializers import UserProfileSerializer, TokenVerifySerializer
+from .serializers import UserProfileSerializer
 from .permissions import IsOwnerProfileOrReadOnly, TeacherPermission
 
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -12,13 +12,7 @@ from rest_framework.response import Response
 from django.contrib.auth import authenticate
 from django.conf import settings
 
-# from rest_framework_simplejwt.authentication import JWTAuthentication, JWTTokenUserAuthentication
-# from .authenticate import CustomAuthentication
-#
-# from rest_framework_simplejwt import views
-# from rest_framework import generics
-# from rest_framework_simplejwt.authentication import AUTH_HEADER_TYPES
-# from rest_framework_simplejwt.exceptions import InvalidToken, TokenError
+import requests
 
 
 class UserProfileListCreateView(generics.ListCreateAPIView):
@@ -74,46 +68,19 @@ class LoginView(APIView):
             return Response({"Invalid" : "Invalid username or password!!"}, status=status.HTTP_404_NOT_FOUND)
 
 
-#
-# class TokenViewBase(generics.GenericAPIView):
-#     permission_classes = ()
-#     authentication_classes = ()
-#
-#     serializer_class = None
-#
-#     www_authenticate_realm = 'api'
-#
-#     def get_authenticate_header(self, request):
-#         return '{0} realm="{1}"'.format(
-#             AUTH_HEADER_TYPES[0],
-#             self.www_authenticate_realm,
-#         )
-#
-#     def post(self, request, *args, **kwargs):
-#         serializer = self.get_serializer(data=request.data)
-#
-#         try:
-#             serializer.is_valid(raise_exception=True)
-#         except TokenError as e:
-#             raise InvalidToken(e.args[0])
-#
-#         return Response(serializer.validated_data, status=status.HTTP_200_OK)
-#
-#
-# class CheckLoginView(TokenViewBase):
-#     serializer_class = TokenVerifySerializer
-#
-#     # def get(self, request):
-#     #     data = request.data
-#     #     response = Response()
-#     #     # print(request.COOKIES['access_token'])
-#     #     auth_token = JWTTokenUserAuthentication()
-#     #     print(auth_token.get_validated_token(raw_token=request.COOKIES['access_token']))
-#     #     username = data.get('username', None)
-#     #     password = data.get('password', None)
-#     #     user = authenticate(username=username, password=password)
-#     #     if auth_token.get_validated_token(raw_token=request.COOKIES['access_token']):
-#     #         return Response(status=status.HTTP_200_OK)
-#     #     else:
-#     #         return Response(status=status.HTTP_404_NOT_FOUND)
-#
+class CheckLoginView(APIView):
+
+    def get(self, request, *args, **kwargs):
+
+        url = 'http://127.0.0.1:8000/auth/jwt/verify/'
+        data = {'token': request.COOKIES['access_token']}
+
+        headers = {'content-type': 'application/json',
+                   'Accept-Charset': 'UTF-8',
+                   'Authorization': request.COOKIES['access_token']}
+        r = requests.post(url, json=data, headers=headers)
+
+        if r.reason == "OK":
+            return Response(status=status.HTTP_200_OK)
+        else:
+            return Response(status=status.HTTP_404_NOT_FOUND)

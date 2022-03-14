@@ -18,15 +18,18 @@ class UserProfileSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class TokenVerifySerializer(serializers.Serializer):
-    token = serializers.CharField()
-
-    def validate(self, attrs):
-        token = UntypedToken(attrs['token'])
-
-        if api_settings.BLACKLIST_AFTER_ROTATION:
-            jti = token.get(api_settings.JTI_CLAIM)
-            if BlacklistedToken.objects.filter(token__jti=jti).exists():
-                raise ValidationError("Token is blacklisted")
-
-        return {}
+# class CustomTokenVerifySerializer(serializers.Serializer):
+#     token = serializers.CharField()
+#
+#     def validate(self, request):
+#         print(request)
+#         token = UntypedToken(request['token'])
+#         print(token)
+#
+#         if api_settings.BLACKLIST_AFTER_ROTATION:
+#             jti = token.get(api_settings.JTI_CLAIM)
+#             print(jti)
+#             if BlacklistedToken.objects.filter(token__jti=jti).exists():
+#                 raise ValidationError("Token is blacklisted")
+#
+#         return {"Success" : "Active Login"}
