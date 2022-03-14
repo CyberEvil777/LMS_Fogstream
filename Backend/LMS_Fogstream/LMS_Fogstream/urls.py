@@ -36,11 +36,6 @@ schema_view = get_schema_view(
    permission_classes=(permissions.AllowAny,),
 )
 
-'''This exposes 4 endpoints:
-A JSON view of your API specification at /swagger.json
-A YAML view of your API specification at /swagger.yaml
-A swagger-ui view of your API specification at /swagger/
-A ReDoc view of your API specification at /redoc/'''
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -49,21 +44,13 @@ urlpatterns = [
     path('auth/', include('djoser.urls.authtoken')),
     path('auth/', include('djoser.urls.jwt')),
     path('api/v1/', include('lms.urls')),
-<<<<<<< Updated upstream
     path('api/v1/', include('accounts.urls')),
-=======
     path('', include('video_hosting.urls')),
-    # path('swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
->>>>>>> Stashed changes
 ]
 
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-
-
-

@@ -40,24 +40,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'drf_yasg',
-    # required for serving swagger ui's css/js files
     'rest_framework',
     'djoser',
     'rest_framework_simplejwt',
-<<<<<<< Updated upstream
     'corsheaders',
+    'drf_yasg',
 
     'lms',
     'accounts',
     'task',
-=======
     'video_hosting',
-    'lms',
-
->>>>>>> Stashed changes
+    'django_filters',
 ]
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -71,7 +65,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'LMS_Fogstream.urls'
-
 
 TEMPLATES = [
     {
@@ -179,6 +172,7 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
 }
 
 DJOSER = {
