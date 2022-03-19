@@ -24,7 +24,7 @@ class Course(models.Model):
     short_description = models.CharField("Краткое описание", max_length=100, default="Описание")
     tagline = models.CharField("Слоган", max_length=100, default='')
     information = models.TextField("Информация курса")
-    picture = models.ImageField("Обложка курса", upload_to="courses/")
+    picture = models.ImageField("Обложка курса", upload_to="courses/", null=True)
     draft = models.BooleanField("Черновик", default=False)
 
     def __str__(self):
