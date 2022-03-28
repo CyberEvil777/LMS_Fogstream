@@ -26,6 +26,7 @@ class Course(models.Model):
     information = models.TextField("Информация курса")
     picture = models.ImageField("Обложка курса", upload_to="courses/")
     draft = models.BooleanField("Черновик", default=False)
+    color = models.CharField("Цвет", max_length=10, default='#FFFFFF')
 
     def __str__(self):
         return self.title

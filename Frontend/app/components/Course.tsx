@@ -35,11 +35,11 @@ const textVariants: Variants = {
 
 const CourseComponent = ({
   title,
-  shortDescription,
+  short_description: shortDescription,
   completed,
   lessons,
   color,
-  image,
+  picture: image,
   noInfo,
   className,
   ...props

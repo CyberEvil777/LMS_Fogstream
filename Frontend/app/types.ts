@@ -1,11 +1,11 @@
 export type Course = {
   title: string;
-  shortDescription: string;
+  short_description: string;
   description: string;
   color: string;
   completed: number;
   lessons: number;
-  image: string;
+  picture: string;
 };
 
 export enum LessonType {

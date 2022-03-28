@@ -69,18 +69,8 @@ class LoginView(APIView):
 
 
 class CheckLoginView(APIView):
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
-
-        url = 'http://127.0.0.1:8000/auth/jwt/verify/'
-        data = {'token': request.COOKIES['access_token']}
-
-        headers = {'content-type': 'application/json',
-                   'Accept-Charset': 'UTF-8',
-                   'Authorization': request.COOKIES['access_token']}
-        r = requests.post(url, json=data, headers=headers)
-
-        if r.reason == "OK":
-            return Response(status=status.HTTP_200_OK)
-        else:
-            return Response(status=status.HTTP_404_NOT_FOUND)
+        response = Response({"Success": "Authentication was succeeded"}, status=status.HTTP_200_OK)
+        return response

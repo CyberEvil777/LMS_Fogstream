@@ -49,7 +49,7 @@ class CourseListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Course
-        fields = ("id", "title", "short_description", "picture")
+        fields = ("id", "title", "short_description", "picture", "color")
 
 
 class LessonShortCategorySerializer(serializers.ModelSerializer):
@@ -66,7 +66,7 @@ class CourseDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Course
-        fields = ("title", "short_description", "picture", "lessons_cat_course")
+        fields = ("title", "short_description", "picture", "lessons_cat_course", "color")
 
 
 class GroupListSerializer(serializers.ModelSerializer):
