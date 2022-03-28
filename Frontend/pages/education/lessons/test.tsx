@@ -1,22 +1,15 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import { NextPage } from 'next';
-import { DocumentIcon, DownloadIcon, CheckIcon } from '@heroicons/react/outline';
-import { motion, Variants } from 'framer-motion';
+import { CheckIcon } from '@heroicons/react/outline';
 import Header from '@/components/Header';
 import { config } from '@/config';
 import Container from '@/layouts/Container';
 import Title from '@/components/Title';
 import Footer from '@/components/Footer';
-import LessonComponent from '@/components/Lesson';
-import { StatusLabel } from '@/components/Status';
-import { LessonType } from '@/types';
-import { useCounts } from '@/utils/hooks';
-import Button, { ButtonToggler } from '@/components/Button';
-import Link from 'next/link';
-import dayjs from 'dayjs';
+import Button from '@/components/Button';
 import SidebarSection, { SidebarComments } from '@/components/Sidebar';
 import { user, course, lectionLesson } from '@/utils/fake';
-import { Article, LessonFooter, AttachedComponent } from '@/components/Article';
+import { LessonFooter } from '@/components/Article';
 
 const Page: NextPage = () => {
   const [completed, setCompleted] = useState(lectionLesson.completed);
@@ -28,8 +21,14 @@ const Page: NextPage = () => {
         <Title className="mb-5" title={lectionLesson.title} subtitle={course.title} />
         <div className="flex flex-col lg:flex-row">
           <div className="flex-grow sm:mr-0 mb-8 lg:mr-8 sm:mb-8 lg:mb-0">
-            <div className="border border-neutral-100 px-10 py-12 xl:py-24 mb-10 ">
-              
+            <div
+              className="border-4 border-neutral-100 border-dashed rounded-xl
+                  text-center mb-10 relative"
+            >
+              <input type="file" className="w-full h-full left-0 top-0 absolute opacity-0" />
+              <div className="px-10 py-12 xl:py-24">
+                <h3 className="font-raleway text-neutral-300">Upload file...</h3>
+              </div>
             </div>
             <LessonFooter description={lectionLesson.description} files={lectionLesson.files} />
           </div>

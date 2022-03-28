@@ -4,12 +4,12 @@ export const user: User = { id: 1 };
 
 export const course: Course = {
   title: 'Firewall Course',
-  shortDescription: 'We need to input the multi-byte SAS pixel!',
+  short_description: 'We need to input the multi-byte SAS pixel!',
   description: 'aNon modo mihi magis faciem, deos fratres utilibus, luctante coniciunt hospes!Licet ciboque, renasci desierim dixit: lacrimae: sed. A surgimus, pax ministret,lapillo: frustra pro est superi? Miscent reccidimus abstulit casa: aves \n\ndumque;hanc et hosti consumpserat etiam?Dum Solem est auras metuenda terque cognovit reddere. Acti abit, ita inde etsuos *Indigetem armatus* sim dextram ordine procul, si neque sub matres aut.Vulnera et salices lugebat, ecce exoratis. Nulla in nunc Semina Aurora; eripis,puellae praeside.A concussit furit citus et omnia. Mei ferant grandiaque ora cum hinc.',
   color: '#F28F3B',
   completed: 4,
   lessons: 12,
-  image: '/lessons/lesson7.svg',
+  picture: '/lessons/lesson7.svg',
 };
 
 export const courseContent: Category[] = [
@@ -113,57 +113,57 @@ export const courseContent: Category[] = [
 
 export const courses: Course[] = [{
   title: 'bandwidth course',
-  shortDescription: 'Use the mobile HDD circuit, then you can override the digital firewall!',
+  short_description: 'Use the mobile HDD circuit, then you can override the digital firewall!',
   description: 'aNon modo mihi magis faciem, deos fratres utilibus, luctante coniciunt hospes!Licet ciboque, renasci desierim dixit: lacrimae: sed. A surgimus, pax ministret,lapillo: frustra pro est superi? Miscent reccidimus abstulit casa: aves dumque;hanc et hosti consumpserat etiam?Dum Solem est auras metuenda terque cognovit reddere. Acti abit, ita inde etsuos *Indigetem armatus* sim dextram ordine procul, si neque sub matres aut.Vulnera et salices lugebat, ecce exoratis. Nulla in nunc Semina Aurora; eripis,puellae praeside.A concussit furit citus et omnia. Mei ferant grandiaque ora cum hinc procullongius, naves omen: quid viderat! Intus et caesa sit subtemen comitesque fuit.Sertaque adhuc quoque contemptor et neque mille sonitum et dignamur moveremulcet bisque ante actis ullis sic. Feris Minos, has amicas ruinas Threiciamnatantes coniuge, annum ficti Aglauros ambagum de Hymetti deficiunt quinfalsoque quod.',
   color: '#F28F3B',
   completed: 4,
   lessons: 12,
-  image: '/lessons/lesson7.svg',
+  picture: '/lessons/lesson7.svg',
 },
 {
   title: 'system love',
-  shortDescription: 'If we bypass the protocol, we can get to the PCI card through the neural ADP transmitter!',
+  short_description: 'If we bypass the protocol, we can get to the PCI card through the neural ADP transmitter!',
   description: 'aNon modo mihi magis faciem, deos fratres utilibus, luctante coniciunt hospes!Licet ciboque, renasci desierim dixit: lacrimae: sed. A surgimus, pax ministret,lapillo: frustra pro est superi? Miscent reccidimus abstulit casa: aves dumque;hanc et hosti consumpserat etiam?Dum Solem est auras metuenda terque cognovit reddere. Acti abit, ita inde etsuos *Indigetem armatus* sim dextram ordine procul, si neque sub matres aut.Vulnera et salices lugebat, ecce exoratis. Nulla in nunc Semina Aurora; eripis,puellae praeside.A concussit furit citus et omnia. Mei ferant grandiaque ora cum hinc procullongius, naves omen: quid viderat! Intus et caesa sit subtemen comitesque fuit.Sertaque adhuc quoque contemptor et neque mille sonitum et dignamur moveremulcet bisque ante actis ullis sic. Feris Minos, has amicas ruinas Threiciamnatantes coniuge, annum ficti Aglauros ambagum de Hymetti deficiunt quinfalsoque quod.',
   color: '#EF233C',
   completed: 8,
   lessons: 32,
-  image: '/lessons/lesson8.svg',
+  picture: '/lessons/lesson8.svg',
 },
 {
   title: 'monitor ckrack',
-  shortDescription: 'We need to index the solid state SMTP hard drive!',
+  short_description: 'We need to index the solid state SMTP hard drive!',
   description: 'aNon modo mihi magis faciem, deos fratres utilibus, luctante coniciunt hospes!Licet ciboque, renasci desierim dixit: lacrimae: sed. A surgimus, pax ministret,lapillo: frustra pro est superi? Miscent reccidimus abstulit casa: aves dumque;hanc et hosti consumpserat etiam?Dum Solem est auras metuenda terque cognovit reddere. Acti abit, ita inde etsuos *Indigetem armatus* sim dextram ordine procul, si neque sub matres aut.Vulnera et salices lugebat, ecce exoratis. Nulla in nunc Semina Aurora; eripis,puellae praeside.A concussit furit citus et omnia. Mei ferant grandiaque ora cum hinc procullongius, naves omen: quid viderat! Intus et caesa sit subtemen comitesque fuit.Sertaque adhuc quoque contemptor et neque mille sonitum et dignamur moveremulcet bisque ante actis ullis sic. Feris Minos, has amicas ruinas Threiciamnatantes coniuge, annum ficti Aglauros ambagum de Hymetti deficiunt quinfalsoque quod.',
   color: '#000000',
   completed: 5,
   lessons: 16,
-  image: '/lessons/lesson3.svg',
+  picture: '/lessons/lesson3.svg',
 },
 {
   title: 'feed doggy style',
-  shortDescription: 'If we hack the microchip, we can get to the SQL card through the optical IB matrix!',
+  short_description: 'If we hack the microchip, we can get to the SQL card through the optical IB matrix!',
   description: 'aNon modo mihi magis faciem, deos fratres utilibus, luctante coniciunt hospes!Licet ciboque, renasci desierim dixit: lacrimae: sed. A surgimus, pax ministret,lapillo: frustra pro est superi? Miscent reccidimus abstulit casa: aves dumque;hanc et hosti consumpserat etiam?Dum Solem est auras metuenda terque cognovit reddere. Acti abit, ita inde etsuos *Indigetem armatus* sim dextram ordine procul, si neque sub matres aut.Vulnera et salices lugebat, ecce exoratis. Nulla in nunc Semina Aurora; eripis,puellae praeside.A concussit furit citus et omnia. Mei ferant grandiaque ora cum hinc procullongius, naves omen: quid viderat! Intus et caesa sit subtemen comitesque fuit.Sertaque adhuc quoque contemptor et neque mille sonitum et dignamur moveremulcet bisque ante actis ullis sic. Feris Minos, has amicas ruinas Threiciamnatantes coniuge, annum ficti Aglauros ambagum de Hymetti deficiunt quinfalsoque quod.',
   color: '#f20088',
   completed: 0,
   lessons: 8,
-  image: '/lessons/lesson4.svg',
+  picture: '/lessons/lesson4.svg',
 },
 {
   title: 'firewall',
-  shortDescription: 'We need to input the multi-byte SAS pixel!',
+  short_description: 'We need to input the multi-byte SAS pixel!',
   description: 'aNon modo mihi magis faciem, deos fratres utilibus, luctante coniciunt hospes!Licet ciboque, renasci desierim dixit: lacrimae: sed. A surgimus, pax ministret,lapillo: frustra pro est superi? Miscent reccidimus abstulit casa: aves dumque;hanc et hosti consumpserat etiam?Dum Solem est auras metuenda terque cognovit reddere. Acti abit, ita inde etsuos *Indigetem armatus* sim dextram ordine procul, si neque sub matres aut.Vulnera et salices lugebat, ecce exoratis. Nulla in nunc Semina Aurora; eripis,puellae praeside.A concussit furit citus et omnia. Mei ferant grandiaque ora cum hinc procullongius, naves omen: quid viderat! Intus et caesa sit subtemen comitesque fuit.Sertaque adhuc quoque contemptor et neque mille sonitum et dignamur moveremulcet bisque ante actis ullis sic. Feris Minos, has amicas ruinas Threiciamnatantes coniuge, annum ficti Aglauros ambagum de Hymetti deficiunt quinfalsoque quod.',
   color: '#cf75ff',
   completed: 12,
   lessons: 12,
-  image: '/lessons/lesson5.svg',
+  picture: '/lessons/lesson5.svg',
 },
 {
   title: 'matrix',
-  shortDescription: "synthesizing the system won't do anything, we need to connect the online PCI transmitter!",
+  short_description: "synthesizing the system won't do anything, we need to connect the online PCI transmitter!",
   description: 'aNon modo mihi magis faciem, deos fratres utilibus, luctante coniciunt hospes!Licet ciboque, renasci desierim dixit: lacrimae: sed. A surgimus, pax ministret,lapillo: frustra pro est superi? Miscent reccidimus abstulit casa: aves dumque;hanc et hosti consumpserat etiam?Dum Solem est auras metuenda terque cognovit reddere. Acti abit, ita inde etsuos *Indigetem armatus* sim dextram ordine procul, si neque sub matres aut.Vulnera et salices lugebat, ecce exoratis. Nulla in nunc Semina Aurora; eripis,puellae praeside.A concussit furit citus et omnia. Mei ferant grandiaque ora cum hinc procullongius, naves omen: quid viderat! Intus et caesa sit subtemen comitesque fuit.Sertaque adhuc quoque contemptor et neque mille sonitum et dignamur moveremulcet bisque ante actis ullis sic. Feris Minos, has amicas ruinas Threiciamnatantes coniuge, annum ficti Aglauros ambagum de Hymetti deficiunt quinfalsoque quod.',
   color: '#5FBFF9',
   completed: 7,
   lessons: 14,
-  image: '/lessons/lesson6.svg',
+  picture: '/lessons/lesson6.svg',
 }];
 
 export const videoLesson: LessonVideo = {

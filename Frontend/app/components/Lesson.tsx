@@ -41,7 +41,7 @@ const LessonComponent = ({
       </div>
       <div className="flex flex-col p-8 justify-between flex-grow border-x border-neutral-100">
         <div className="mb-0">
-          <Link href={`/education/lessons/${id}`}>
+          <Link href={`/education/lessons/${type}`}>
             <a className="inline-block font-raleway text-lg md:text-2xl mb-2 hover:underline">{`${index}. ${title}`}</a>
           </Link>
           <p className="text-sm md:text-base">{description}</p>
@@ -54,7 +54,7 @@ const LessonComponent = ({
           )
         }
       </div>
-      <Link href={`/education/lessons/${id}`} passHref>
+      <Link href={`/education/lessons/${type}`} passHref>
         <a className="flex flex-shrink-0 w-20 md:w-40
           items-center justify-center hover:bg-neutral-100
           active:bg-neutral-200

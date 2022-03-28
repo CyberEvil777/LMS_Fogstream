@@ -2,9 +2,9 @@ import React, { forwardRef, Ref, useState } from 'react';
 import { HTMLMotionProps, motion } from 'framer-motion';
 import classnames from 'classnames';
 
-type ButtonProps = HTMLMotionProps<'button'>;
+type ButtonProps = HTMLMotionProps<'button'> & { loading?: boolean };
 
-const Button = ({ children, className, ...props }: ButtonProps) => (
+const Button = ({ children, className, loading, ...props }: ButtonProps) => (
   <motion.button
     className={classnames('py-3 px-2 text-sm', className)}
     initial={{ scale: 1 }}
@@ -13,7 +13,11 @@ const Button = ({ children, className, ...props }: ButtonProps) => (
     type="button"
     {...props}
   >
-    {children}
+    {
+      loading
+        ? 'Loading...'
+        : children
+    }
   </motion.button>
 );
 
@@ -74,16 +78,3 @@ export const ButtonToggler = ({
     </div>
   );
 };
-
-/* <Link href="/education/lessons/1" passHref>
-  <a>
-    <Button
-      className="border hover:bg-neutral-200
-    transition-colors duration-150 text-black w-40 flex
-    justify-center items-center mr-10"
-    >
-      {buttonLabel}
-      <ArrowRightIcon className="h-3 ml-3" />
-    </Button>
-  </a>
-</Link> */

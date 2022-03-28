@@ -66,7 +66,7 @@ const Page: NextPage = () => {
                 />
               </motion.div>
               <div>
-                <Title title={course.title} subtitle={course.shortDescription} />
+                <Title title={course.title} subtitle={course.short_description} />
                 <p className="text-sm text-neutral-700 whitespace-pre-wrap">{course.description}</p>
               </div>
             </div>
